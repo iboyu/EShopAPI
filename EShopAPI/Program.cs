@@ -17,7 +17,7 @@ namespace EShopAPI
             // Add services to the container.
             builder.Services.AddDbContext<EShopDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("EShopDB"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("WebApi"));
             });
 
             builder.Services.AddControllers();
@@ -37,6 +37,12 @@ namespace EShopAPI
             #endregion
             #region
             builder.Services.AddScoped<IProductRepositoryAsync, ProductRepositoryAsync>();
+            #endregion
+            #region
+            builder.Services.AddScoped<IAuthenticationServiceAsync, AuthenticationServiceAsync>();
+            #endregion
+            #region
+            builder.Services.AddScoped<IAuthenticationRepositoryAsync, AuthenticationRepositoryAsync>();
             #endregion
 
 

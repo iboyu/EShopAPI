@@ -12,6 +12,8 @@ namespace EShopAPI
             CreateMap<ProductResponseModel, Product>().ReverseMap();
             CreateMap<Customer, CustomerRequestModel>().ReverseMap();
             CreateMap<Customer,CustomerResponseModel>().ReverseMap();
+            CreateMap<Authentication, AuthenticationRequestModel>().ReverseMap();
+            CreateMap<Authentication, AuthenticationResponseModel>().ReverseMap();
         }
     }
 }
